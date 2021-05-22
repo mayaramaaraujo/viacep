@@ -5,9 +5,11 @@ const BASE_URL = "https://viacep.com.br/ws"
 export class ViaCepService {
 
   public async getAddress(cep: string): Promise<any> {
-      await axios.get(`${BASE_URL}/${cep}/json`)
+      const result = await axios.get(`${BASE_URL}/${cep}/json`)
       .then(res => res.data)
       .catch(err => err)
+
+      return result;
   }
 }
 
