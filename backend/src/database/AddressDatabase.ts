@@ -11,6 +11,7 @@ export class AddressDatabase extends BaseDatabase {
           logradouro: address.getLogradouro(),
           complemento: address.getComplemento(),
           bairro: address.getBairro(),
+          localidade: address.getLocalidade(),
           uf: address.getUf()
         })
         .into(this.tableName.address)
@@ -25,7 +26,7 @@ export class AddressDatabase extends BaseDatabase {
       .select()
       .from(this.tableName.address)
       .where('cep', cep)
-
+      
       return address
     } catch (error) {
       throw new Error(error.message || error.sqlMessage);

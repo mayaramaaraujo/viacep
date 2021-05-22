@@ -11,6 +11,10 @@ class AddressBusiness {
         throw new Error('It is necessary to pass a CEP.')
       }
 
+      if(cep.length > 8 ) {
+        throw new Error("It is to large")
+      }
+
       if(cep.length > 9 || isNaN(parseInt(cep))) {
         throw new Error("Invalid format")
       }
@@ -32,6 +36,7 @@ class AddressBusiness {
           addresByViaCepService.logradouro,
           addresByViaCepService.complemento,
           addresByViaCepService.bairro,
+          addresByViaCepService.localidade,
           addresByViaCepService.uf
         )
 

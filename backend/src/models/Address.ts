@@ -5,6 +5,7 @@ export class Address {
     private logradouro: string,
     private complemento: string,
     private bairro: string,
+    private localidade: string,
     private uf: string
   ) {
     this.id = id,
@@ -12,6 +13,7 @@ export class Address {
       this.logradouro = logradouro,
       this.complemento = complemento,
       this.bairro = bairro,
+      this.localidade = localidade,
       this.uf = uf
   }
 
@@ -35,10 +37,13 @@ export class Address {
     return this.bairro
   }
 
+  public getLocalidade(): string {
+    return this.localidade
+  }
+
   public getUf(): string {
     return this.uf
   }
-
 }
 
 export default interface AddressByViaCep {
