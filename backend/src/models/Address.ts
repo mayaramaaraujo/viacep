@@ -1,7 +1,7 @@
 export class Address {
   constructor(
     private id: string,
-    private cep: number,
+    private cep: string,
     private logradouro: string,
     private complemento: string,
     private bairro: string,
@@ -19,7 +19,7 @@ export class Address {
     return this.id
   }
 
-  public getCep(): number {
+  public getCep(): string {
     return this.cep;
   }
 
@@ -39,4 +39,17 @@ export class Address {
     return this.uf
   }
 
+}
+
+export default interface AddressByViaCep {
+  cep: string,
+  logradouro: string,
+  complemento: string,
+  bairro: string,
+  localidade: string,
+  uf: string,
+  ibge: string,
+  gia: string,
+  ddd: string,
+  siafi: string
 }
