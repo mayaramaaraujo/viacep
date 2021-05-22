@@ -5,7 +5,7 @@ dotenv.config();
 
 export default class BaseDatabase {
 
-  protected tableName = { user: "user" }
+  protected tableName = { address: "address" }
 
   protected connection: Knex = knex({
     client: "mysql2",
